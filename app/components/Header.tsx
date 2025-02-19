@@ -42,9 +42,8 @@ export function Header({
       setisScrollingUp(lastScrollY > currentScrollY);
       setLastScrollY(currentScrollY);
       setIsSrcoll(currentScrollY > 50);
-
-      window.addEventListener('scroll', handleScroll, {passive: true});
     };
+    window.addEventListener('scroll', handleScroll, {passive: true});
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isScroll, lastScrollY, asideType]);
 
@@ -76,7 +75,7 @@ export function Header({
             : 'bg-white border-gray-100 '
         }`}
       >
-        <div className="container mx-auto">
+        <div className="container lg:py-4 py-0 mx-auto ">
           {/* mobile logo */}
           <div
             className={`hidden max-[550px]:block text-center border-b border-b-gray-100 duration-300 transition-all ease-in-out ${

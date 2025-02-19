@@ -1,3 +1,4 @@
+import {X} from 'lucide-react';
 import {
   createContext,
   type ReactNode,
@@ -34,40 +35,66 @@ export function Aside({
 }) {
   const {type: activeType, close} = useAside();
   const expanded = type === activeType;
-
   useEffect(() => {
-    const abortController = new AbortController();
+    if (!expanded) return;
+    const scrollY = window.scrollY;
+    const originalSystem = {
+      overflow: document.body.style.overflow,
+      height: document.body.style.height,
+      position: document.body.style.position,
+      top: document.body.style.top,
+      width: document.body.style.width,
+    };
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.top = `-${scrollY}px`;
+    return () => {
+      document.body.style.overflow = originalSystem.overflow;
+      document.body.style.height = originalSystem.height;
+      document.body.style.position = originalSystem.position;
+      document.body.style.width = originalSystem.width;
+      document.body.style.top = originalSystem.top;
 
-    if (expanded) {
-      document.addEventListener(
-        'keydown',
-        function handler(event: KeyboardEvent) {
-          if (event.key === 'Escape') {
-            close();
-          }
-        },
-        {signal: abortController.signal},
-      );
-    }
-    return () => abortController.abort();
-  }, [close, expanded]);
-
+      window.scrollTo(0, scrollY);
+    };
+  }, [expanded]);
+  useEffect(() => {
+    if (!expanded) return;
+    const handleEspcape = (event: KeyboardEvent) => {
+      if (event.key === 'ESC') {
+        close();
+      }
+    };
+    document.addEventListener('keydown', handleEspcape);
+    return () => document.removeEventListener('keydown', handleEspcape);
+  }, [expanded, close]);
   return (
     <div
-      aria-modal
-      className={`overlay ${expanded ? 'expanded' : ''}`}
+      aria-modal="true"
       role="dialog"
+      className={`fixed inset-0 z-50 transition-opacity duration-300 ease-in-out ${
+        expanded ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
     >
-      <button className="close-outside" onClick={close} />
-      <aside>
-        <header>
-          <h3>{heading}</h3>
-          <button className="close reset" onClick={close} aria-label="Close">
-            &times;
-          </button>
-        </header>
-        <main>{children}</main>
-      </aside>
+      {/* overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50">
+        {/* Aside panel */}
+        <aside
+          className={`absolute top-0 right-0 h-screen w-full max-w-md flex flex-col bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+            expanded ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <header className="flex items-center justify-between p-4 border-b border-gray-100">
+            <h3 className="font-playfair text-brand-navy text-xl">{heading}</h3>
+            <button className="text-gray-400 hover:text-gray-500 transition-colors duration-300 ">
+              <X className="w-5 h-5" onClick={close} />
+            </button>
+          </header>
+          <main className="flex-1 overflow-y-auto">{children}</main>
+        </aside>
+      </div>
     </div>
   );
 }
