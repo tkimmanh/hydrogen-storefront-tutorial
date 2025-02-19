@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  src: url('/fonts/playfair/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  src: url('/fonts/playfair/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  src: url('/fonts/playfair/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  src: url('/fonts/playfair/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  src: url('/fonts/playfair/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  src: url('/fonts/playfair/PlayfairDisplay-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  src: url('/fonts/playfair/PlayfairDisplay-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  src: url('/fonts/source-sans-pro/SourceSansPro-Black.otf') format('opentype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  src: url('/fonts/source-sans-pro/SourceSansPro-BlackIt.otf')
+    format('opentype');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  src: url('/fonts/source-sans-pro/SourceSansPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  src: url('/fonts/source-sans-pro/SourceSansPro-BoldIt.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  src: url('/fonts/source-sans-pro/SourceSansPro-ExtraLight.otf')
+    format('opentype');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  src: url('/fonts/source-sans-pro/SourceSansPro-ExtraLightIt.otf')
+    format('opentype');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  src: url('/fonts/source-sans-pro/SourceSansPro-It.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  src: url('/fonts/source-sans-pro/SourceSansPro-Light.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  src: url('/fonts/source-sans-pro/SourceSansPro-LightIt.otf')
+    format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  src: url('/fonts/soucre-sans-pro/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  src: url('/fonts/soucre-sans-pro/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
